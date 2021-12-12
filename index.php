@@ -205,7 +205,7 @@ $user_name = 'Павел'; // укажите здесь ваше имя
         </div>
         <div class="popular__posts">
             <?php
-            $post = [
+            $posts = [
                 [
                     'title' => 'Цитата',
                     'type' => 'post-quote',
@@ -243,23 +243,23 @@ $user_name = 'Павел'; // укажите здесь ваше имя
                 ]
             ];
             ?>
-            <?php foreach ($post as $key => $val): ?>
-            <article class="popular__post post <?=$val['type']?>">
+            <?php foreach ($posts as $post): ?>
+            <article class="popular__post post <?=htmlspecialchars($post['type'])?>">
                 <header class="post__header">
-                    <h2><?=$val['title']?></h2>
+                    <h2><?=htmlspecialchars($post['title'])?></h2>
                 </header>
                 <div class="post__main">
-                    <?=$val['content']?>
+                    <?=htmlspecialchars($post['content'])?>
                 </div>
                 <footer class="post__footer">
                     <div class="post__author">
                         <a class="post__author-link" href="#" title="Автор">
                             <div class="post__avatar-wrapper">
                                 <!--укажите путь к файлу аватара-->
-                                <img class="post__author-avatar" src="img/<?=$val['avatar']?>" alt="Аватар пользователя">
+                                <img class="post__author-avatar" src="img/<?=htmlspecialchars($post['avatar'])?>" alt="Аватар пользователя">
                             </div>
                             <div class="post__info">
-                                <b class="post__author-name"><?=$val['user_name']?></b>
+                                <b class="post__author-name"><?=htmlspecialchars($post['user_name'])?></b>
                                 <time class="post__time" datetime="">дата</time>
                             </div>
                         </a>
