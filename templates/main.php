@@ -93,8 +93,7 @@
                         <h2><?= htmlspecialchars($post['title']) ?></h2>
                     </header>
                     <div class="post__main">
-                        <?= $postCut = cutText($post['content'], 300);
-                        htmlspecialchars($postCut) ?>
+                        <?= cutText($post['content'], 300) ?>
                     </div>
                     <footer class="post__footer">
                         <div class="post__author">

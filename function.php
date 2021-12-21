@@ -5,16 +5,15 @@ function cutText($post, $lenght)
     $sum = 0;
     $words_back = array();
     foreach ($words as $word) {
+        $words_back[] = $word;
         $sum = mb_strlen($word) + $sum;
+        $result = htmlspecialchars(implode(" ", $words_back));
         if ($sum > $lenght) {
-            $words_back[] = '...<a class="post-text__more-link" href="#">Читать далее</a>';
+            $result = $result . '...<a class="post-text__more-link" href="#">Читать далее</a>';
             break;
-        } else {
-            $words_back[] = $word;
         }
     }
-    $post = implode(" ", $words_back);
-    return $post;
+    return $result;
 }
 
 function include_template($name, array $data = [])
