@@ -4,12 +4,13 @@ function cutText($post, $lenght)
     $words = explode(" ", $post);
     $sum = 0;
     $words_back = array();
+    $result; 
     foreach ($words as $word) {
         $words_back[] = $word;
         $sum = mb_strlen($word) + $sum;
         $result = htmlspecialchars(implode(" ", $words_back));
         if ($sum > $lenght) {
-            $result = $result . '...<a class="post-text__more-link" href="#">Читать далее</a>';
+            $result .= '...<a class="post-text__more-link" href="#">Читать далее</a>';
             break;
         }
     }
