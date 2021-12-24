@@ -4,7 +4,7 @@ function cutText($post, $lenght)
     $words = explode(" ", $post);
     $sum = 0;
     $words_back = array();
-    $result; 
+    $result;
     foreach ($words as $word) {
         $words_back[] = $word;
         $sum = mb_strlen($word) + $sum;
