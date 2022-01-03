@@ -1,5 +1,4 @@
 <?php
-
 require('function.php');
 require('templates/datas.php');
 $page_content = include_template('main.php', ['posts' => $posts]);
