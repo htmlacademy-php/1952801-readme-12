@@ -89,17 +89,16 @@ function get_noun_plural_form(int $number, string $one, string $two, string $man
     $number = (int)$number;
     $mod10 = $number % 10;
     $mod100 = $number % 100;
-    if ($mod100 >= 11 && $mod100 <= 20):
+    if ($mod100 >= 11 && $mod100 <= 20) {
         return $many;
-    elseif ($mod10 > 5):
+    } elseif ($mod10 > 5) {
         return $many;
-    elseif ($mod10 === 1):
+    } elseif ($mod10 === 1) {
         return $one;
-    elseif ($mod10 >= 2 && $mod10 <= 4):
+    } elseif ($mod10 >= 2 && $mod10 <= 4) {
         return $two;
-    else:
-        return $many;
-    endif;
+    }
+    return $many;
 }
 
 function get_interval($recording_date): string
