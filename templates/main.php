@@ -1,4 +1,3 @@
-
 <section class="page__main page__main--popular">
     <div class="container">
         <h1 class="page__title page__title--popular">Популярное</h1>
@@ -87,7 +86,8 @@
             </div>
         </div>
         <div class="popular__posts">
-            <?php foreach ($posts as $post): ?>
+            <?php foreach ($posts as $key => $post): ?>
+                <?php $recording_date = date_create(generate_random_date($key)); ?>
                 <article class="popular__post post <?= htmlspecialchars($post['type']) ?>">
                     <header class="post__header">
                         <h2><?= htmlspecialchars($post['title']) ?></h2>
@@ -97,7 +97,8 @@
                     </div>
                     <footer class="post__footer">
                         <div class="post__author">
-                            <a class="post__author-link" href="#" title="Автор">
+                            <a class="post__author-link" href="#"
+                               title="<?= date_format($recording_date, "Y-m-d H:i") ?>">
                                 <div class="post__avatar-wrapper">
                                     <!--укажите путь к файлу аватара-->
                                     <img class="post__author-avatar" src="img/<?= htmlspecialchars($post['avatar']) ?>"
@@ -105,7 +106,7 @@
                                 </div>
                                 <div class="post__info">
                                     <b class="post__author-name"><?= htmlspecialchars($post['user_name']) ?></b>
-                                    <time class="post__time" datetime="">дата</time>
+                                    <time class="post__time" datetime="<?= date_format($recording_date, "c") ?>"><?= get_interval($recording_date) ?></time>
                                 </div>
                             </a>
                         </div>
