@@ -34,6 +34,7 @@ function include_template($name, array $data = [])
 
     return $result;
 }
+
 /**
  * @param $index
  * @return false|string
@@ -60,6 +61,7 @@ function generate_random_date($index)
 
     return $dt;
 }
+
 /**
  * Возвращает корректную форму множественного числа
  * Ограничения: только для целых чисел
@@ -87,24 +89,19 @@ function get_noun_plural_form(int $number, string $one, string $two, string $man
     $number = (int)$number;
     $mod10 = $number % 10;
     $mod100 = $number % 100;
-
-    switch (true) {
-        case ($mod100 >= 11 && $mod100 <= 20):
-            return $many;
-
-        case ($mod10 > 5):
-            return $many;
-
-        case ($mod10 === 1):
-            return $one;
-
-        case ($mod10 >= 2 && $mod10 <= 4):
-            return $two;
-
-        default:
-            return $many;
-    }
+    if ($mod100 >= 11 && $mod100 <= 20):
+        return $many;
+    elseif ($mod10 > 5):
+        return $many;
+    elseif ($mod10 === 1):
+        return $one;
+    elseif ($mod10 >= 2 && $mod10 <= 4):
+        return $two;
+    else:
+        return $many;
+    endif;
 }
+
 function get_interval($recording_date): string
 {
     $cur_date = date_create("now");
