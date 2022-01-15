@@ -1,4 +1,3 @@
-DROP DATABASE `base_1952801_readme_12`;
 CREATE DATABASE IF NOT EXISTS base_1952801_readme_12
   DEFAULT CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE base_1952801_readme_12;
