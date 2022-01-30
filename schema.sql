@@ -90,16 +90,6 @@ CREATE TABLE messages
   CONSTRAINT messages_get_users_fk
     FOREIGN KEY (user_id_get) REFERENCES users (id) ON DELETE CASCADE
 );
-INSERT INTO type_content (title, name_class)
-VALUES ('Текст', 'photo');
-INSERT INTO type_content (title, name_class)
-VALUES ('Цитата', 'video');
-INSERT INTO type_content (title, name_class)
-VALUES ('Картинка', 'text');
-INSERT INTO type_content (title, name_class)
-VALUES ('Видео', 'quote');
-INSERT INTO type_content (title, name_class)
-VALUES ('Ссылка', 'link');
 CREATE TABLE user_role
 (
   id   INT AUTO_INCREMENT PRIMARY KEY,
