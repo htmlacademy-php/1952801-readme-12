@@ -88,12 +88,12 @@
         <div class="popular__posts">
             <?php foreach ($posts as $key => $post): ?>
                 <?php $recording_date = date_create(generate_random_date($key)); ?>
-                <article class="popular__post post <?= htmlspecialchars($post['type']) ?>">
+                <article class="popular__post post <?= htmlspecialchars($post['name_class']) ?>">
                     <header class="post__header">
                         <h2><?= htmlspecialchars($post['title']) ?></h2>
                     </header>
                     <div class="post__main">
-                        <?= cutText($post['content'], 300) ?>
+                        <?= cutText($post['text'], 300) ?>
                     </div>
                     <footer class="post__footer">
                         <div class="post__author">
@@ -101,11 +101,11 @@
                                title="<?= date_format($recording_date, "Y-m-d H:i") ?>">
                                 <div class="post__avatar-wrapper">
                                     <!--укажите путь к файлу аватара-->
-                                    <img class="post__author-avatar" src="img/<?= htmlspecialchars($post['avatar']) ?>"
+                                    <img class="post__author-avatar" src="img/<?= htmlspecialchars($post['avatar_path']) ?>"
                                          alt="Аватар пользователя">
                                 </div>
                                 <div class="post__info">
-                                    <b class="post__author-name"><?= htmlspecialchars($post['user_name']) ?></b>
+                                    <b class="post__author-name"><?= htmlspecialchars($post['login']) ?></b>
                                     <time class="post__time" datetime="<?= date_format($recording_date, "c") ?>"><?= get_interval($recording_date) ?></time>
                                 </div>
                             </a>
