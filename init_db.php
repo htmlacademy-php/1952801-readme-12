@@ -1,7 +1,7 @@
 <?php
 require_once ('config.php');
-$con = mysqli_connect($host, $username,$password, $database);
-if ($con === false) {
+$con =mysqli_connect($host, $username,$password, $database);
+if (!$con) {
     print("Ошибка подключения: " . mysqli_connect_error());
     die();
 } else {
