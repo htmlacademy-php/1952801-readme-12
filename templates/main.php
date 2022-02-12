@@ -135,7 +135,7 @@
                         </div>
                     </footer>
                 </article>
-            <?php endforeach; ?>
+            <?php endforeach;?>
         </div>
     </div>
 </section>
